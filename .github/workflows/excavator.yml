@@ -1,17 +1,32 @@
+# @Author: ZhanYu
+# @Email: 2833171898@qq.com
+# @Date:   2026-06-03 13:29:52
+# @Last Modified by:   ZhanYu
+# @Last Modified time: 2026-06-03 13:11:17
+# @Github: https://github.com/luigits
+# @blog: https://luigits.github.io/
+
+name: Excavator
+
 on:
   workflow_dispatch:
   schedule:
-    # run every 4 hours
-    - cron: '20 */4 * * *'
-name: Excavator
+    # 每天执行一次（UTC 时间 00:00，即北京时间 08:00）
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: write
+
 jobs:
   excavate:
     name: Excavate
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@main
-      - name: Excavate
-        uses: ScoopInstaller/GithubActions@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_UPDATED: 1
+    - name: Checkout
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+    - name: Excavate
+      uses: ScoopInstaller/GithubActions@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SKIP_UPDATED: '1'
+        SCOOP_BRANCH: develop
