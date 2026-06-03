@@ -1,42 +1,163 @@
-# Scoop Bucket Template
+# Zhanyu-Scoop
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+[English](README.md) | [中文](README.zh.md)
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+---
 
-## How do I use this template?
+scoop-zhanyu is a scoop bucket, and this repository is a collection for personal use.
 
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Allow writing to the repository from within GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Select `Read and write permissions`.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
+## Available Software
 
-## How do I install these manifests?
+This bucket contains manifest files for the following applications:
 
-After manifests have been committed and pushed, run the following:
+**Development Tools**
 
-```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+| Category              | Packages                                                        |
+| --------------------- | --------------------------------------------------------------- |
+| Programming Languages | go, nodejs, nodejs-lts, python, rustup-msvc                     |
+| Editors               | neovim,  obsidian                                               |
+| Terminals             | powershell, powershell-lts, powershell-preview,windows-terminal |
+| Font                  | JetBrains-Mono  Maple-Mono                                      |
+| Dev Tools             | git, jetbrains-toolbox,                                         |
+| Other                 | scoop-search                                                    |
+
+**Media & Entertainment**
+
+| Category          | Packages                    |
+| ----------------- | --------------------------- |
+| Video Players     | ffmpeg, potplayer, bilibili |
+| Download Managers | Motrix-Next                 |
+| Game              | steam                       |
+| Accelerate        | steampp                     |
+
+
+**Utilities & Productivity**
+
+| Category         | Packages                                                       |
+| ---------------- | -------------------------------------------------------------- |
+| Browser          | firefox-zh-cn, firefox-developer-zh-cn, googlechrome           |
+| Office           | libreoffice                                                    |
+| Tools            | 7zip, snipaste, utools, windows-iso-downloader                 |
+| System Utilities | dark, auto-dark-mode, powertoys-np, wechat-np, qqnt, mobaxterm |
+| CLI              | scoop-search, sudo, winget                                     |
+
+**Frameworks & Runtime**
+
+| Category     | Packages                                           |
+| ------------ | -------------------------------------------------- |
+| Runtime      | windowsdesktop-runtime, windowsdesktop-runtime-lts |
+| AI/ML        | ollama                                             |
+| Flutter      | flutter-cn                                         |
+| Game Engines | godot                                              |
+
+---
+
+## Quick Start
+
+### Install Scoop
+
+Ensure PowerShell allows local script execution:
+
+```powershell
+set-executionpolicy remotesigned -scope currentuser
 ```
 
-## How do I contribute new manifests?
+Install Scoop to custom location:
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+```powershell
+$env:SCOOP='D:\scoop'
+[environment]::setEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+```
+
+If the download fails, you can add proxy: `gh-proxy.org`.
+
+```http
+# Original link
+https://get.scoop.sh
+
+# Proxy link
+https://gh-proxy.org/https://get.scoop.sh
+```
+
+### Add This Bucket
+
+```bash
+scoop bucket add zhanyu https://github.com/luigits/scoop-zhanyu
+```
+
+### Install Applications
+
+```bash
+# Install specific application
+scoop install zhanyu/app_name
+
+# e.g.
+scoop install zhanyu/potplayer
+```
+
+### Uninstall Applications
+
+```bash
+# Uninstall specific application
+scoop uninstall zhanyu/app_name
+
+# e.g.
+scoop uninstall zhanyu/potplayer
+```
+
+### Update Applications
+
+```bash
+# Suppose scoop status prompts potplayer for an update.
+scoop status
+
+# Update specific application
+scoop update zhanyu/app_name
+
+# e.g.
+scoop update zhanyu/potplayer
+```
+### Remove Buckets
+
+```bash
+# Remove all buckets
+scoop bucket rm *
+
+# Remove specific bucket
+scoop bucket rm zhanyu
+```
+
+### Common Commands
+
+```bash
+# Update scoop
+scoop update
+
+# Update all applications
+scoop update *
+
+# Install specific application from a bucket
+scoop install zhanyu/bilibli
+
+# Global install
+scoop install 7zip git --global
+
+# Clear cache
+scoop cache rm *
+
+# Cleanup old versions
+scoop cleanup *
+```
+
+> [!warning] Warning
+> It is not recommended to place the software customized configuration and documents in the software directory.
+>
+> Using the clear cache command will delete them, resulting in the loss of results. Otherwise, please back them up to remote storage.
+
+
+## Other Buckets
+
+[https://scoop.sh/#/buckets](https://scoop.sh/#/buckets)
+
+[https://rasa.github.io/scoop-directory/by-score](https://rasa.github.io/scoop-directory/by-score)
