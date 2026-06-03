@@ -1,0 +1,21 @@
+{
+    "homepage": "https://github-store.org/",
+    "description": "GitHub Store is a free, open-source app store for GitHub releases.",
+    "license": "Apache-2.0",
+    "version": "1.9.0",
+    "url": "https://gh-proxy.org/https://github.com/OpenHub-Store/GitHub-Store/releases/download/v1.9.0/GitHub-Store-1.9.0.exe#/dl.7z",
+    "hash": "293BF6C7E8BFAE042A61A83900A15D5D0091155C93735F6990729ED5897CF0B5",
+    "shortcuts": [
+        [
+            "github-store.exe",
+            "GitHub Store"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/OpenHub-Store/GitHub-Store"
+    },
+    "autoupdate": {
+        "url": "https://gh-proxy.org/https://github.com/OpenHub-Store/GitHub-Store/releases/download/v$version/GitHub-Store-$version.exe#/dl.7z"
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse -ErrorAction SilentlyContinue"
+}
