@@ -2,7 +2,7 @@
 # @Email: 2833171898@qq.com
 # @Date:   2026-06-03 13:29:52
 # @Last Modified by:   ZhanYu
-# @Last Modified time: 2026-06-03 14:07:22
+# @Last Modified time: 2026-06-03 14:13:26
 # @Github: https://github.com/luigits
 # @blog: https://luigits.github.io/
 
@@ -29,3 +29,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SKIP_UPDATED: '1'
+        DEFAULT_BRANCH: 'develop'
