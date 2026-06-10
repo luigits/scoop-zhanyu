@@ -150,7 +150,7 @@ scoop cache rm *
 scoop cleanup *
 ```
 
-> [!warning] Warning
+> [!warning]
 > It is not recommended to place the software customized configuration and documents in the software directory.
 >
 > Using the clear cache command will delete them, resulting in the loss of results. Otherwise, please back them up to remote storage.
