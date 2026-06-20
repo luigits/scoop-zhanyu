@@ -18,7 +18,7 @@ This bucket contains manifest files for the following applications:
 | Editors               | neovim,  obsidian                                               |
 | Terminals             | powershell, powershell-lts, powershell-preview,windows-terminal |
 | Font                  | JetBrains-Mono  Maple-Mono                                      |
-| Dev Tools             | git, jetbrains-toolbox,                                         |
+| Dev Tools             | git, jetbrains-toolbox, Rebased                                 |
 | Other                 | scoop-search                                                    |
 
 **Media & Entertainment**

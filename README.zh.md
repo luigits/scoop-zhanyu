@@ -18,7 +18,7 @@ scoop-zhanyu 是一个 scoop bucket,这个存储库是供个人使用的集合�
 | 编辑器   | neovim,  obsidian                                               |
 | 终端     | powershell, powershell-lts, powershell-preview,windows-terminal |
 | 字体     | JetBrains-Mono  Maple-Mono                                      |
-| 开发工具 | git, jetbrains-toolbox,                                         |
+| 开发工具 | git, jetbrains-toolbox, Rebased                                 |
 | 其他     | scoop-search                                                    |
 
 ### 媒体娱乐
@@ -154,13 +154,21 @@ scoop cleanup *
 
 ```powershell
 # 中国国内镜像bucket
-scoop bucket add main https://gitee.com/scoop-installer/Main # 主bucket
-scoop bucket add extras https://gitee.com/scoop-installer/Extras # 扩展bucket
-scoop bucket add echo https://gitee.com/scoop-installer/echo-scoop
-scoop bucket add nerd-fonts https://gitee.com/scoop-installer/scoop-nerd-fonts # 字体bucket
+# main: 官方维护的主库，主要是CLI程序
+scoop bucket add main https://gitee.com/scoop-installer/Main
+
+# extras: 官方维护的扩展库，包含GUI程序
+scoop bucket add extras https://gitee.com/scoop-installer/Extras
+
+# 字体库
+# 推荐Maple Mo(编辑器中使用)、Maple Mono NF CN(包含图标、中文、日文字符的字体)
+scoop bucket add nerd-fonts https://gitee.com/scoop-installer/scoop-nerd-fonts
+
+# 高性能软件库
 scoop bucket add dorado https://gitee.com/scoop-installer/dorado
-scoop bucket add nonportable https://gitee.com/scoop-installer/Nonportable # 非便捷程序bucket
-scoop bucket add Versions https://gitee.com/scoop-installer/Versions
+
+# 非便捷程序
+scoop bucket add nonportable https://gitee.com/scoop-installer/Nonportable
 ```
 
 ## 其他软件桶
