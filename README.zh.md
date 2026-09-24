@@ -26,7 +26,7 @@ scoop-zhanyu 是一个 scoop bucket,这个存储库是供个人使用的集合�
 | 类别       | 名称                        |
 | ---------- | --------------------------- |
 | 播放器     | ffmpeg, potplayer, bilibili |
-| 下载管理器 | Motrix-Next                 |
+| 下载管理器 | Rayburst                 |
 | 游戏平台   | steam                       |
 | 加速器     | steampp                     |
 

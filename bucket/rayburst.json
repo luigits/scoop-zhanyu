@@ -1,0 +1,21 @@
+{
+    "homepage": "https://rayburst.pages.dev/",
+    "description": "A full-featured download manager",
+    "license": "MIT",
+    "version": "4.0.0",
+    "url": "https://github.com/AnInsomniacy/rayburst/releases/download/v4.0.0/Rayburst_4.0.0_x64-setup.exe#/dl.7z",
+    "hash": "sha256:6025330aa6e36b65af9c71930a3a341feeeff621e9364bc6c69046627f787352",
+    "shortcuts": [
+        [
+            "Rayburst.exe",
+            "Rayburst"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/AnInsomniacy/rayburst"
+    },
+    "autoupdate": {
+        "url": "https://github.com/AnInsomniacy/rayburst/releases/download/v$version/Rayburst_$version_x64-setup.exe#/dl.7z"
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse -ErrorAction SilentlyContinue"
+}

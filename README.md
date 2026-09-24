@@ -26,7 +26,7 @@ This bucket contains manifest files for the following applications:
 | Category          | Packages                    |
 | ----------------- | --------------------------- |
 | Video Players     | ffmpeg, potplayer, bilibili |
-| Download Managers | Motrix-Next                 |
+| Download Managers | Rayburst                 |
 | Game              | steam                       |
 | Accelerate        | steampp                     |
 
