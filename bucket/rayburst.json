@@ -2,9 +2,9 @@
     "homepage": "https://rayburst.pages.dev/",
     "description": "A full-featured download manager",
     "license": "MIT",
-    "version": "4.0.0",
-    "url": "https://github.com/AnInsomniacy/rayburst/releases/download/v4.0.0/Rayburst_4.0.0_x64-setup.exe#/dl.7z",
-    "hash": "sha256:6025330aa6e36b65af9c71930a3a341feeeff621e9364bc6c69046627f787352",
+    "version": "4.0.1",
+    "url": "https://github.com/AnInsomniacy/rayburst/releases/download/v4.0.1/Rayburst_4.0.1_x64-setup.exe#/dl.7z",
+    "hash": "51692dbe1ca668d58541ab8a04ed9c305740a89155b7de33e456e7f41d12f090",
     "shortcuts": [
         [
             "Rayburst.exe",
